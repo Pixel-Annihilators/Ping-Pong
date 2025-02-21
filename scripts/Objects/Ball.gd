@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal score_updated
+
 var speed := 800.0
 var start_velocity_y := randf_range(-speed*SettingsSaveManager.settings["ball_speed_multiplier"],
 									speed*SettingsSaveManager.settings["ball_speed_multiplier"])
@@ -49,7 +51,11 @@ func _process(delta: float) -> void:
 		var collider = collision.get_collider()
 		var normal = collision.get_normal()
 		if collider == get_tree().get_first_node_in_group("PlayerSticks"):
-			# TODO: integrate scoreboard
+			ScoreManager.score+=1
+			if ScoreManager.score>ScoreManager.highscore:
+				ScoreManager.highscore = ScoreManager.score
+			ScoreManager.save_scores()
+			emit_signal("score_updated")
 			velocity = bounce_wall_moving(velocity, normal, PlayerStickVelocityUpdater.velocity)
 
 		else:

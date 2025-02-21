@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b53h7q4go4b5u"]
+[gd_scene load_steps=9 format=3 uid="uid://b53h7q4go4b5u"]
 
 [ext_resource type="Texture2D" uid="uid://dk7xkai7nn6ox" path="res://assets/bgs/space 1152x648.jpg" id="1_1posi"]
 [ext_resource type="PackedScene" uid="uid://uglsl1cb1g1n" path="res://scenes/Objects/Ball.tscn" id="2_khm42"]
 [ext_resource type="PackedScene" uid="uid://cyobew2dex63h" path="res://scenes/Objects/PlayerStick.tscn" id="3_17bjy"]
 [ext_resource type="PackedScene" uid="uid://bcawmdalr6g50" path="res://scenes/Objects/ComputerStick.tscn" id="4_qg6c5"]
+[ext_resource type="Script" path="res://scripts/Labels/ScoreValue.gd" id="5_0cklw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc4tl"]
 size = Vector2(1152, 10)
@@ -47,3 +48,27 @@ position = Vector2(17, 189)
 
 [node name="ComputerStick" parent="." instance=ExtResource("4_qg6c5")]
 position = Vector2(1135, 254)
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 453.0
+offset_right = 651.0
+offset_bottom = 81.0
+theme_override_colors/font_outline_color = Color(1, 0.580392, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 28
+text = "SCORE = 
+HIGH SCORE ="
+horizontal_alignment = 2
+
+[node name="ScoreValue" type="Label" parent="."]
+offset_left = 658.0
+offset_right = 698.0
+offset_bottom = 81.0
+theme_override_colors/font_outline_color = Color(1, 0.580392, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 28
+text = "0
+0"
+script = ExtResource("5_0cklw")
+
+[connection signal="score_updated" from="Ball" to="ScoreValue" method="_on_ball_score_updated"]

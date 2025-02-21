@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 SettingsSaveManager="*res://scripts/Autoload/SettingsSaveManager.gd"
 BallPositionUpdater="*res://scripts/Autoload/BallPositionUpdater.gd"
 PlayerStickVelocityUpdater="*res://scripts/Autoload/PlayerStickVelocityUpdater.gd"
+ScoreManager="*res://scripts/Autoload/ScoreManager.gd"
 
 [global_group]
 
