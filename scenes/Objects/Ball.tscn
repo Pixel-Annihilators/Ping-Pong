@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://uglsl1cb1g1n"]
+
+[ext_resource type="Texture2D" uid="uid://cxptoy36dnlox" path="res://assets/ball/magenta circle nobg.png" id="1_d474l"]
+[ext_resource type="Script" path="res://scripts/Objects/Ball.gd" id="1_uvies"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p5sw2"]
+radius = 37.0
+
+[node name="Ball" type="CharacterBody2D"]
+script = ExtResource("1_uvies")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_p5sw2")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_d474l")

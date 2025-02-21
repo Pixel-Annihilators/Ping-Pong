@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcawmdalr6g50"]
+
+[ext_resource type="Script" path="res://scripts/Objects/ComputerStick.gd" id="1_ocrfx"]
+[ext_resource type="Shader" path="res://scenes/Objects/PlayerStick.gdshader" id="2_7qnit"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0fmm"]
+size = Vector2(34, 170)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qtnl5"]
+shader = ExtResource("2_7qnit")
+
+[sub_resource type="Gradient" id="Gradient_6okcd"]
+offsets = PackedFloat32Array(0, 0.616883, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fcnp6"]
+gradient = SubResource("Gradient_6okcd")
+
+[node name="ComputerStick" type="CharacterBody2D"]
+script = ExtResource("1_ocrfx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l0fmm")
+
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
+offset_left = -17.0
+offset_top = -85.0
+offset_right = 17.0
+offset_bottom = 85.0
+color = Color(1, 0.580392, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+material = SubResource("ShaderMaterial_qtnl5")
+position = Vector2(-3.8147e-06, 0)
+scale = Vector2(0.4375, 2.5625)
+texture = SubResource("GradientTexture2D_fcnp6")
