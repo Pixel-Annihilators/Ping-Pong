@@ -1,0 +1,112 @@
+[gd_scene load_steps=8 format=3 uid="uid://x5l8yut1p7sc"]
+
+[ext_resource type="Script" path="res://scripts/Menus/GameOver.gd" id="1_j201n"]
+[ext_resource type="Texture2D" uid="uid://bfjh1bsrejh8p" path="res://assets/bgs/gameplay_screenshot.png" id="2_ehqlo"]
+[ext_resource type="FontFile" uid="uid://lpwa6pwk6va2" path="res://assets/fonts/Mexcellent 3d.otf" id="2_oxysn"]
+[ext_resource type="FontFile" uid="uid://0uq6ljhhvlb0" path="res://assets/fonts/Mexcellent Rg.otf" id="2_rkbsj"]
+[ext_resource type="Script" path="res://scripts/Menus/GameOverQuitButton.gd" id="2_s4yik"]
+[ext_resource type="Script" path="res://scripts/Menus/FinalScoreLabel.gd" id="3_x3fsj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sndpw"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j201n")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_ehqlo")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+theme_override_styles/separator = SubResource("StyleBoxEmpty_sndpw")
+
+[node name="SceneTitle" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("2_oxysn")
+theme_override_font_sizes/font_size = 80
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+theme_override_styles/separator = SubResource("StyleBoxEmpty_sndpw")
+
+[node name="FinalScore" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rkbsj")
+theme_override_font_sizes/font_size = 36
+text = "SCORE: 0
+HIGHSCORE: 0"
+horizontal_alignment = 1
+script = ExtResource("3_x3fsj")
+
+[node name="HSeparator5" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+theme_override_styles/separator = SubResource("StyleBoxEmpty_sndpw")
+
+[node name="ReplayButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(480, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_oxysn")
+theme_override_font_sizes/font_size = 48
+text = "REPLAY"
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+theme_override_styles/separator = SubResource("StyleBoxEmpty_sndpw")
+
+[node name="MainMenuButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(480, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_oxysn")
+theme_override_font_sizes/font_size = 48
+text = "RETURN TO MAIN
+MENU"
+
+[node name="HSeparator4" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+theme_override_styles/separator = SubResource("StyleBoxEmpty_sndpw")
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(480, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_oxysn")
+theme_override_font_sizes/font_size = 48
+text = "QUIT"
+script = ExtResource("2_s4yik")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ReplayButton" to="." method="_on_replay_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

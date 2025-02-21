@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2xgt4q6bp6eb"]
+[gd_scene load_steps=8 format=3 uid="uid://c2xgt4q6bp6eb"]
 
-[ext_resource type="FontFile" uid="uid://xgyv38hc5rmb" path="res://assets/fonts/Mexcellent 3d.otf" id="1_rqvqa"]
+[ext_resource type="FontFile" uid="uid://lpwa6pwk6va2" path="res://assets/fonts/Mexcellent 3d.otf" id="1_rqvqa"]
 [ext_resource type="Script" path="res://scripts/Menus/MainMenu.gd" id="1_tljp1"]
 [ext_resource type="Script" path="res://scripts/Menus/MainMenuQuitButton.gd" id="2_860fw"]
+[ext_resource type="Texture2D" uid="uid://bfjh1bsrejh8p" path="res://assets/bgs/gameplay_screenshot.png" id="2_isl42"]
 [ext_resource type="PackedScene" uid="uid://c3qnbokavx540" path="res://scenes/Menus/CreditsScene.tscn" id="3_7yqet"]
 [ext_resource type="PackedScene" uid="uid://bk20si7j5eclg" path="res://scenes/Menus/SettingsScene.tscn" id="5_i1ksc"]
 
@@ -21,6 +22,7 @@ script = ExtResource("1_tljp1")
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
+texture = ExtResource("2_isl42")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(1152, 648)
@@ -114,5 +116,6 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
+[connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]

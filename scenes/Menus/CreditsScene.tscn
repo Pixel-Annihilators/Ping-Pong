@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3qnbokavx540"]
+[gd_scene load_steps=5 format=3 uid="uid://c3qnbokavx540"]
 
 [ext_resource type="Script" path="res://scripts/Menus/CreditsScene.gd" id="1_0l7qh"]
-[ext_resource type="FontFile" uid="uid://btkcpch6va07s" path="res://assets/fonts/Mexcellent Rg.otf" id="1_1wcab"]
+[ext_resource type="FontFile" uid="uid://0uq6ljhhvlb0" path="res://assets/fonts/Mexcellent Rg.otf" id="1_1wcab"]
+[ext_resource type="Texture2D" uid="uid://bfjh1bsrejh8p" path="res://assets/bgs/gameplay_screenshot.png" id="2_tdcco"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rd43y"]
 
@@ -19,6 +20,7 @@ custom_minimum_size = Vector2(1152, 648)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("2_tdcco")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(1152, 648)

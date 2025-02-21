@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 signal score_updated
 
+
+
 var speed := 800.0
 var start_velocity_y := randf_range(-speed*SettingsSaveManager.settings["ball_speed_multiplier"],
 									speed*SettingsSaveManager.settings["ball_speed_multiplier"])
@@ -35,7 +37,6 @@ func bounce_wall_moving(ball_dir: Vector2, wall_normal: Vector2, wall_velocity: 
 
 
 
-
 func _ready() -> void:
 	var screen_size = get_viewport().get_visible_rect().size
 	position = screen_size/2
@@ -64,4 +65,5 @@ func _process(delta: float) -> void:
 	BallPositionUpdater.position = position
 	
 	if position.x<=0:
-		get_tree().quit() # replace with scoreboard connection
+		get_tree().change_scene_to_file("res://scenes/Menus/GameOver.tscn")
+		

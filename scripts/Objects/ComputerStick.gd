@@ -15,6 +15,6 @@ func _process(delta) -> void:
 	if collision:
 		move_cstick = false
 
-	if round_to_n(BallPositionUpdater.position.y, 0)==round_to_n(position.y, 0):
+	if abs(int(BallPositionUpdater.position.y)-int(position.y))<=5:
 		move_cstick = true
 	
