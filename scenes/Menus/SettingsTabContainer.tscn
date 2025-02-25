@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://f0phhi15cdn8"]
+[gd_scene load_steps=14 format=3 uid="uid://f0phhi15cdn8"]
 
 [ext_resource type="Script" path="res://scripts/Menus/Settings/Sound/MasterVolumeHBoxContainer.gd" id="1_2lvqe"]
 [ext_resource type="Script" path="res://scripts/Menus/Settings/Game/BallSpeedMultiplierSpinBox.gd" id="1_n626c"]
@@ -11,6 +11,8 @@
 
 [sub_resource type="Theme" id="Theme_j6l8s"]
 default_font_size = 24
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d0swc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2hnj0"]
 
@@ -83,6 +85,11 @@ step = 0.001
 value = 1.0
 alignment = 1
 script = ExtResource("1_n626c")
+
+[node name="HSeparator" type="HSeparator" parent="TabContainer/GAME/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 48
+theme_override_styles/separator = SubResource("StyleBoxEmpty_d0swc")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/GAME/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
