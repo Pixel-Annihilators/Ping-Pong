@@ -9,7 +9,8 @@ var settings: Dictionary = {
 	"master_volume": 0.442,
 	"music_volume": 0.442,
 	"sfx_volume": 0.442,
-	"ball_speed_multiplier": 1.0
+	"ball_speed_multiplier": 1.0,
+	"stick_speed_multiplier": 1.0
 }
 
 func _ready() -> void:

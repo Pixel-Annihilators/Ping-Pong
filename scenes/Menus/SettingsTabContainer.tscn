@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://f0phhi15cdn8"]
+[gd_scene load_steps=13 format=3 uid="uid://f0phhi15cdn8"]
 
 [ext_resource type="Script" path="res://scripts/Menus/Settings/Sound/MasterVolumeHBoxContainer.gd" id="1_2lvqe"]
 [ext_resource type="Script" path="res://scripts/Menus/Settings/Game/BallSpeedMultiplierSpinBox.gd" id="1_n626c"]
+[ext_resource type="Script" path="res://scripts/Menus/Settings/Game/StickSpeedMultiplierSpinBox.gd" id="2_gyo8q"]
 [ext_resource type="Script" path="res://scripts/Menus/Settings/Sound/SFXVolumeHBoxContainer.gd" id="2_r1ow5"]
 [ext_resource type="Script" path="res://scripts/Menus/Settings/Sound/MusicVolumeHBoxContainer.gd" id="3_wp6nn"]
 [ext_resource type="PackedScene" uid="uid://3vs7m3ossjgl" path="res://scenes/Menus/ActionRemapButton.tscn" id="5_bmah6"]
@@ -64,9 +65,10 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Label" type="Label" parent="TabContainer/GAME/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(520, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
-text = "BALL SPEED MULTIPLIER"
+text = "INITIAL BALL SPEED MULTIPLIER"
 
 [node name="VSeparator" type="VSeparator" parent="TabContainer/GAME/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -81,6 +83,29 @@ step = 0.001
 value = 1.0
 alignment = 1
 script = ExtResource("1_n626c")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/GAME/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/GAME/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(520, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "STICK SPEED MULTIPLIER"
+
+[node name="VSeparator" type="VSeparator" parent="TabContainer/GAME/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 42
+theme_override_styles/separator = SubResource("StyleBoxEmpty_gy18n")
+
+[node name="SpinBox" type="SpinBox" parent="TabContainer/GAME/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_j6l8s")
+min_value = 0.001
+step = 0.001
+value = 1.0
+alignment = 1
+script = ExtResource("2_gyo8q")
 
 [node name="SOUND" type="TabBar" parent="TabContainer"]
 visible = false

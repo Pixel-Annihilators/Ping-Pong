@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-
-const SPEED = 400.0
+var stick_speed_multiplier = SettingsSaveManager.settings["stick_speed_multiplier"]
+var SPEED = 400.0 * stick_speed_multiplier
 
 func _ready() -> void:
 	pass
