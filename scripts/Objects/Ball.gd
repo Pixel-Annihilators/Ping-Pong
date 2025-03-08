@@ -5,8 +5,7 @@ signal score_updated
 
 
 var speed := 800.0
-var start_velocity_y := randf_range(-speed*SettingsSaveManager.settings["ball_speed_multiplier"],
-									speed*SettingsSaveManager.settings["ball_speed_multiplier"])
+var start_velocity_y : float
 
 func round_to_n(num: float, digit: int) -> float:
 	return round(num * pow(10.0, digit)) / pow(10.0, digit)
@@ -38,6 +37,8 @@ func bounce_wall_moving(ball_dir: Vector2, wall_normal: Vector2, wall_velocity: 
 
 
 func _ready() -> void:
+	start_velocity_y = randf_range(-speed*SettingsSaveManager.settings["ball_speed_multiplier"],
+									speed*SettingsSaveManager.settings["ball_speed_multiplier"])
 	var screen_size = get_viewport().get_visible_rect().size
 	position = screen_size/2
 	velocity.y = start_velocity_y*SettingsSaveManager.settings["ball_speed_multiplier"]
