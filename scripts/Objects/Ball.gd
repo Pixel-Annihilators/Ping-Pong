@@ -6,6 +6,7 @@ signal score_updated
 
 var speed := 800.0
 var start_velocity_y : float
+var frozen := false
 
 func round_to_n(num: float, digit: int) -> float:
 	return round(num * pow(10.0, digit)) / pow(10.0, digit)
@@ -43,11 +44,13 @@ func _ready() -> void:
 	position = screen_size/2
 	velocity.y = start_velocity_y*SettingsSaveManager.settings["ball_speed_multiplier"]
 	velocity.x = speed*SettingsSaveManager.settings["ball_speed_multiplier"]
-
-
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if frozen:
+		return
+		
 	var collision = (move_and_collide(velocity*delta))
 	if collision:
 		var collider = collision.get_collider()
