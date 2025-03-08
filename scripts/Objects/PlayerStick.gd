@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
-var stick_speed_multiplier = SettingsSaveManager.settings["stick_speed_multiplier"]
-var SPEED = 400.0 * stick_speed_multiplier
+var stick_speed_multiplier : float 
+var SPEED: float
 
 func _ready() -> void:
-	pass
+	stick_speed_multiplier = SettingsSaveManager.settings["stick_speed_multiplier"]
+	SPEED = 400.0 * stick_speed_multiplier
 
 func _process(_delta: float) -> void:
 	var temp_speed = SPEED*1
