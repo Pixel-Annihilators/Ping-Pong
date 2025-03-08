@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=3 uid="uid://fq1n1cuore57"]
+
+[ext_resource type="Script" path="res://scripts/Menus/PauseMenu.gd" id="1_e7piu"]
+[ext_resource type="FontFile" uid="uid://lpwa6pwk6va2" path="res://assets/fonts/Mexcellent 3d.otf" id="2_oxysn"]
+[ext_resource type="Script" path="res://scripts/Menus/GameOverQuitButton.gd" id="2_s4yik"]
+[ext_resource type="Script" path="res://scripts/Menus/PauseMenuResumeButton.gd" id="3_wnrvx"]
+[ext_resource type="Script" path="res://scripts/Menus/PauseMenuStopGameButton.gd" id="5_npxg4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sndpw"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e7piu")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 108
+theme_override_styles/separator = SubResource("StyleBoxEmpty_sndpw")
+
+[node name="SceneTitle" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("2_oxysn")
+theme_override_font_sizes/font_size = 80
+text = "GAME PAUSED"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+theme_override_styles/separator = SubResource("StyleBoxEmpty_sndpw")
+
+[node name="ResumeButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(480, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_oxysn")
+theme_override_font_sizes/font_size = 48
+text = "RESUME"
+script = ExtResource("3_wnrvx")
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+theme_override_styles/separator = SubResource("StyleBoxEmpty_sndpw")
+
+[node name="StopGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(480, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_oxysn")
+theme_override_font_sizes/font_size = 48
+text = "STOP CURRENT GAME"
+script = ExtResource("5_npxg4")
+
+[node name="HSeparator4" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+theme_override_styles/separator = SubResource("StyleBoxEmpty_sndpw")
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(480, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_oxysn")
+theme_override_font_sizes/font_size = 48
+text = "QUIT GAME"
+script = ExtResource("2_s4yik")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]

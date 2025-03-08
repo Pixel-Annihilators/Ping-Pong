@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b53h7q4go4b5u"]
+[gd_scene load_steps=12 format=3 uid="uid://b53h7q4go4b5u"]
 
 [ext_resource type="Texture2D" uid="uid://dk7xkai7nn6ox" path="res://assets/bgs/space 1152x648.jpg" id="1_1posi"]
 [ext_resource type="Script" path="res://scripts/Worlds/Arena.gd" id="1_g7pwq"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bcawmdalr6g50" path="res://scenes/Objects/ComputerStick.tscn" id="4_qg6c5"]
 [ext_resource type="Script" path="res://scripts/Labels/ScoreValue.gd" id="5_0cklw"]
 [ext_resource type="PackedScene" uid="uid://x5l8yut1p7sc" path="res://scenes/Menus/GameOver.tscn" id="7_fmhx4"]
+[ext_resource type="PackedScene" uid="uid://fq1n1cuore57" path="res://scenes/Menus/PauseMenu.tscn" id="8_n3t81"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc4tl"]
 size = Vector2(1152, 10)
@@ -76,5 +77,8 @@ theme_override_font_sizes/font_size = 28
 text = "0
 0"
 script = ExtResource("5_0cklw")
+
+[node name="PauseMenu" parent="." instance=ExtResource("8_n3t81")]
+visible = false
 
 [connection signal="score_updated" from="Ball" to="ScoreValue" method="_on_ball_score_updated"]
