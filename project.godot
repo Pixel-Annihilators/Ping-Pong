@@ -14,7 +14,7 @@ config/name="Ping Pong"
 run/main_scene="res://scenes/Menus/MainMenu.tscn"
 config/use_hidden_project_data_directory=false
 config/use_custom_user_dir=true
-config/custom_user_dir_name="Pixel Annihilators/Settings Base"
+config/custom_user_dir_name="Pixel Annihilators/Ping Pong"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
