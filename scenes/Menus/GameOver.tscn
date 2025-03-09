@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://x5l8yut1p7sc"]
+[gd_scene load_steps=9 format=3 uid="uid://x5l8yut1p7sc"]
 
 [ext_resource type="Script" path="res://scripts/Menus/GameOver.gd" id="1_j201n"]
 [ext_resource type="Texture2D" uid="uid://bfjh1bsrejh8p" path="res://assets/bgs/gameplay_screenshot.png" id="2_ehqlo"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://0uq6ljhhvlb0" path="res://assets/fonts/Mexcellent Rg.otf" id="2_rkbsj"]
 [ext_resource type="Script" path="res://scripts/Menus/GameOverQuitButton.gd" id="2_s4yik"]
 [ext_resource type="Script" path="res://scripts/Menus/FinalScoreLabel.gd" id="3_x3fsj"]
+[ext_resource type="AudioStream" uid="uid://b65y6leg06ce7" path="res://assets/sounds/space-station-bgm.mp3" id="7_nnvmm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sndpw"]
 
@@ -107,6 +108,10 @@ theme_override_fonts/font = ExtResource("2_oxysn")
 theme_override_font_sizes/font_size = 48
 text = "QUIT"
 script = ExtResource("2_s4yik")
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_nnvmm")
+bus = &"Music"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ReplayButton" to="." method="_on_replay_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

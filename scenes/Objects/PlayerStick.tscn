@@ -16,7 +16,7 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_fcnp6"]
 gradient = SubResource("Gradient_6okcd")
 
-[node name="PlayerStick" type="CharacterBody2D"]
+[node name="PlayerStick" type="CharacterBody2D" groups=["stick"]]
 script = ExtResource("1_vbaeb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

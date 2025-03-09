@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 signal score_updated
 
+@onready var stick_bounce: AudioStreamPlayer = $stick_bounce
+@onready var wall_bounce: AudioStreamPlayer = $wall_bounce
 
 
 var speed := 800.0
@@ -65,7 +67,11 @@ func _process(delta: float) -> void:
 
 		else:
 			velocity = bounce(velocity, normal)
-	
+		
+		if collider in get_tree().get_nodes_in_group("stick"):
+			stick_bounce.play()
+		else:
+			wall_bounce.play()
 	BallPositionUpdater.position = position
 	
 	if position.x<=0:
