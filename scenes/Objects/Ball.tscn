@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://uglsl1cb1g1n"]
+[gd_scene load_steps=6 format=3 uid="uid://uglsl1cb1g1n"]
 
 [ext_resource type="Texture2D" uid="uid://cxptoy36dnlox" path="res://assets/ball/magenta circle nobg.png" id="1_d474l"]
 [ext_resource type="Script" path="res://scripts/Objects/Ball.gd" id="1_uvies"]
+[ext_resource type="AudioStream" uid="uid://bo3d2vilrkxxi" path="res://assets/sounds/ball bounce sound.mp3" id="3_1io86"]
+[ext_resource type="AudioStream" uid="uid://ubpkwpeha64w" path="res://assets/sounds/ball bounce on concrete.mp3" id="4_tghtf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p5sw2"]
 radius = 62.0081
@@ -15,3 +17,11 @@ shape = SubResource("CircleShape2D_p5sw2")
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_d474l")
+
+[node name="stick_bounce" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1io86")
+bus = &"SFX"
+
+[node name="wall_bounce" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_tghtf")
+bus = &"SFX"

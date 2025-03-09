@@ -53,18 +53,33 @@ layout_mode = 2
 theme_override_constants/separation = 24
 theme_override_styles/separator = SubResource("StyleBoxEmpty_rd43y")
 
-[node name="CreditsContent" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="CreditsContent" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 360)
 layout_mode = 2
 theme_override_constants/outline_size = 12
-theme_override_fonts/font = ExtResource("1_1wcab")
-theme_override_font_sizes/font_size = 48
-text = "Pixel Annihilators
-Shoban Chiddarth"
-horizontal_alignment = 1
+theme_override_fonts/normal_font = ExtResource("1_1wcab")
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 12
+bbcode_enabled = true
+text = "[center]
+GAME:
+Pixel Annihilators
+Shoban Chiddarth
+
+Music:
+BGM: [hint=https://pixabay.com/users/drmseq-38682070][url=https://pixabay.com/users/drmseq-38682070]drmseq[/url][/hint] on [hint=https://pixabay.com][url=https://pixabay.com]pixabay[/url][/hint]
+SFX: [hint=https://pixabay.com/users/engyclick-41075976][url=https://pixabay.com/users/engyclick-41075976]Pankaj Yadav[/url][/hint] on [hint=https://pixabay.com][url=https://pixabay.com]Pixabay[/url][/hint]
+
+
+
+"
 
 [node name="HSeparator3" type="HSeparator" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 220
+theme_override_constants/separation = 24
 theme_override_styles/separator = SubResource("StyleBoxEmpty_rd43y")
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]

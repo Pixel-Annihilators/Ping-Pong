@@ -34,6 +34,7 @@ window/size/resizable=false
 keybind_buttons="Keybind Remap buttons in settings"
 settings_back_button="Back button of settings page"
 PlayerSticks="The (left) stick controlled by player"
+stick="Sticks that hit the ball"
 
 [input]
 
