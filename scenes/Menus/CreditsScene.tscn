@@ -71,11 +71,8 @@ Shoban Chiddarth
 
 Music:
 BGM: [hint=https://pixabay.com/users/drmseq-38682070][url=https://pixabay.com/users/drmseq-38682070]drmseq[/url][/hint] on [hint=https://pixabay.com][url=https://pixabay.com]pixabay[/url][/hint]
-SFX: [hint=https://pixabay.com/users/engyclick-41075976][url=https://pixabay.com/users/engyclick-41075976]Pankaj Yadav[/url][/hint] on [hint=https://pixabay.com][url=https://pixabay.com]Pixabay[/url][/hint]
-
-
-
-"
+SFX downloaded and edited from: 
+[hint=https://pixabay.com/users/engyclick-41075976][url=https://pixabay.com/users/engyclick-41075976]Pankaj Yadav[/url][/hint] and [hint=https://pixabay.com/users/freesound_community-46691455/][url=https://pixabay.com/users/freesound_community-46691455/]freesound_community[/url][/hint] on [hint=https://pixabay.com][url=https://pixabay.com]Pixabay[/url][/hint]"
 
 [node name="HSeparator3" type="HSeparator" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
