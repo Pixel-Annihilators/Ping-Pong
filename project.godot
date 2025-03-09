@@ -16,7 +16,7 @@ config/use_hidden_project_data_directory=false
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Pixel Annihilators/Ping Pong"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://assets/ball/magenta circle nobg 256x256.svg"
 
 [autoload]
 
