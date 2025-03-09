@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://f0phhi15cdn8"]
+[gd_scene load_steps=15 format=3 uid="uid://f0phhi15cdn8"]
 
 [ext_resource type="Script" path="res://scripts/Menus/Settings/Sound/MasterVolumeHBoxContainer.gd" id="1_2lvqe"]
 [ext_resource type="Script" path="res://scripts/Menus/Settings/Game/BallSpeedMultiplierSpinBox.gd" id="1_n626c"]
@@ -22,6 +22,8 @@ default_font_size = 24
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w1jqs"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bsesn"]
+
 [node name="SettingsTabContainer" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -42,10 +44,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 
 [node name="GAME" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -116,6 +117,7 @@ alignment = 1
 script = ExtResource("2_gyo8q")
 
 [node name="SOUND" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -341,7 +343,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="ActionName" type="Label" parent="TabContainer/CONTROLS/MarginContainer/ScrollContainer/VBoxContainer/UpHBoxContainer"]
-custom_minimum_size = Vector2(240, 0)
+custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "MOVE UPWARDS"
@@ -364,7 +366,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_w1jqs")
 layout_mode = 2
 
 [node name="ActionName" type="Label" parent="TabContainer/CONTROLS/MarginContainer/ScrollContainer/VBoxContainer/DownHBoxContainer"]
-custom_minimum_size = Vector2(240, 0)
+custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "MOVE DOWNWARDS"
@@ -377,6 +379,32 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_ocvji")
 [node name="ActionRemapButton" parent="TabContainer/CONTROLS/MarginContainer/ScrollContainer/VBoxContainer/DownHBoxContainer" instance=ExtResource("5_bmah6")]
 layout_mode = 2
 action = "down"
+
+[node name="HSeparator2" type="HSeparator" parent="TabContainer/CONTROLS/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 48
+theme_override_styles/separator = SubResource("StyleBoxEmpty_w1jqs")
+
+[node name="PauseHBoxContainer" type="HBoxContainer" parent="TabContainer/CONTROLS/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/CONTROLS/MarginContainer/ScrollContainer/VBoxContainer/PauseHBoxContainer"]
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "PAUSE (CAN'T CHANGE)"
+
+[node name="VSeparator" type="VSeparator" parent="TabContainer/CONTROLS/MarginContainer/ScrollContainer/VBoxContainer/PauseHBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 240
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bsesn")
+
+[node name="PauseButton" type="Button" parent="TabContainer/CONTROLS/MarginContainer/ScrollContainer/VBoxContainer/PauseHBoxContainer"]
+custom_minimum_size = Vector2(240, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+disabled = true
+text = "esc"
 
 [connection signal="pressed" from="TabContainer/SOUND/MarginContainer/ScrollContainer/VBoxContainer/MasterVolumeHBoxContainer/MinusButton" to="TabContainer/SOUND/MarginContainer/ScrollContainer/VBoxContainer/MasterVolumeHBoxContainer" method="_on_minus_button_pressed"]
 [connection signal="value_changed" from="TabContainer/SOUND/MarginContainer/ScrollContainer/VBoxContainer/MasterVolumeHBoxContainer/MasterVolumeHSlider" to="TabContainer/SOUND/MarginContainer/ScrollContainer/VBoxContainer/MasterVolumeHBoxContainer" method="_on_master_volume_h_slider_value_changed"]
