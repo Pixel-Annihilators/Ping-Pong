@@ -1,5 +1,7 @@
 # PING PONG
 
+![thumbnail](./assets/bgs/thumbnail.png)
+
 Classic Ping Pong but a little different.
 
 In classic ping pong the ball moves in a random direction after you hit it.
